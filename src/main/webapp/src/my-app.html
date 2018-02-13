@@ -142,14 +142,8 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       },
 
       _signOut: function() {
-        var auth2 = gapi.auth2.getAuthInstance();
-        auth2.signOut().then(function(){
-          console.log('Cerrando sesión...');
-          gapi.auth2.getAuthInstance().disconnect();
-          user = null;
-          console.log('Redireccionando...');
-          window.location.href = '/';
-        });
+        console.log('Redireccionando...');
+        window.location.href = '/';
       }
     });
   </script>
