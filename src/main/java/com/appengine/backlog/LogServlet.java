@@ -19,27 +19,21 @@ import com.google.appengine.api.log.AppLogLine;
 import com.google.appengine.api.log.LogQuery;
 import com.google.appengine.api.log.LogServiceFactory;
 import com.google.appengine.api.log.RequestLogs;
+import org.joda.time.DateTime;
 
 import java.io.IOException;
 import java.io.PrintWriter;
-import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-
-import org.joda.time.DateTime;
 
 /**
  * Created on 13/02/2018.
  *
  * @author Entelgy
  */
-@WebServlet(
-    name = "logs",
-    description = "Logs: Diplay lines of the request log.",
-    urlPatterns = "/logs"
-)
 public class LogServlet extends HttpServlet {
+
   @Override
   public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
     response.setContentType("text/html");
